@@ -4,19 +4,20 @@ class HomeController extends GetxController {
   //TODO: Implement HomeController
 
   final count = 0.obs;
+
   @override
   void onInit() {
+    increment();
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  var isLoading = false.obs;
 
-  @override
-  void onClose() {
-    super.onClose();
+  void onSubmit() async {
+    isLoading.value = true;
+    await Future.delayed(const Duration(seconds: 2));
+    print("Submit button pressed");
+    isLoading.value = false;
   }
 
   void increment() => count.value++;

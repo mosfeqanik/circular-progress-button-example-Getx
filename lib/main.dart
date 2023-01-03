@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
-
-const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+import 'app/utils.dart';
 
 void main() {
   runApp(
     GetMaterialApp(
       title: "Application",
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
